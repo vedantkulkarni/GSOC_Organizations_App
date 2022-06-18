@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gsoc_organizations/Utilities/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,13 +27,22 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
+      drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text("Organizations"),
-      ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(color: blackColor),
+          elevation: 0,
+          backgroundColor: bgColor,
+          title: SizedBox(
+            height: 50,
+            width: 50,
+            child: gsocLogo, //Can be found in constants.dart
+          )),
       body: SingleChildScrollView(
         child: Container(
             child: const Center(
-          child: Text("GSOC Organizations....."),
+          child: Text(""),
         )),
       ),
     );
