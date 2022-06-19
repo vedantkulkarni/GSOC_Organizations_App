@@ -1,50 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:gsoc_organizations/Utilities/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gsoc_organizations/Features/Home/presentation/cubit/home_cubit.dart';
+import 'Features/Home/presentation/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
-    );
-  }
+  State<MyApp> createState() => _MyAppState();
 }
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: bgColor,
-      drawer: const Drawer(),
-      appBar: AppBar(
-          centerTitle: true,
-          iconTheme: const IconThemeData(color: blackColor),
-          elevation: 0,
-          backgroundColor: bgColor,
-          title: SizedBox(
-            height: 50,
-            width: 50,
-            child: gsocLogo, //Can be found in constants.dart
-          )),
-      body: SingleChildScrollView(
-        child: Container(
-            child: const Center(
-          child: Text(""),
-        )),
-      ),
+    return BlocProvider(
+      create: (_) => HomeCubit(),
+      child: const MaterialApp(home: HomeScreen()),
     );
   }
 }

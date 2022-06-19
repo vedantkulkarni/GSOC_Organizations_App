@@ -8,3 +8,4 @@ abstract class HomeState extends Equatable {
 }
 
 class HomeInitial extends HomeState {}
+class AllOrganizationsState extends HomeState{}
