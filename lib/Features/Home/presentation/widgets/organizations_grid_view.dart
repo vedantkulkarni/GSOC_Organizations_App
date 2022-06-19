@@ -27,13 +27,13 @@ class _OrganizationGridViewState extends State<OrganizationGridView> {
         return Container(
           child: AnimationLimiter(
             child: GridView.count(
-              crossAxisCount: 3,
+              crossAxisCount: 4,
               physics: const BouncingScrollPhysics(),
               children: List.generate(_organizationsList.length, (index) {
                 return AnimationConfiguration.staggeredGrid(
                     position: index,
                     duration: const Duration(milliseconds: 500),
-                    columnCount: 2,
+                    columnCount: 4,
                     child: ScaleAnimation(
                       duration: const Duration(milliseconds: 900),
                       curve: Curves.fastLinearToSlowEaseIn,
