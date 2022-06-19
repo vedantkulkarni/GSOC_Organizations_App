@@ -33,7 +33,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/GSoC-icon.svg/512px-GSoC-icon.svg.png?20190503110706" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">GSOC Organizations App</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
