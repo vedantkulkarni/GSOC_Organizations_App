@@ -10,10 +10,12 @@ class GsocOrganization {
   final String twitter_url;
   final String blog_url;
   final String irc_channel;
-  final List<dynamic> technologies;
-  final List<dynamic> topics;
+  final String technologies;
+  final String topics;
   final Map<String, dynamic> years;
-  List<Map<String, dynamic>> allProjects =[];
+  final List<dynamic> techList ;
+  final List<dynamic> topicsList;
+  List<Map<String, dynamic>> allProjects = [];
 
   GsocOrganization(
       {required this.name,
@@ -29,8 +31,10 @@ class GsocOrganization {
       required this.technologies,
       required this.topics,
       required this.years,
-      required this.irc_channel}) {
-    List<Map<String,dynamic>> temp = [];
+      required this.irc_channel,
+      required this.techList,
+      required this.topicsList }) {
+    List<Map<String, dynamic>> temp = [];
     for (var everyYear in years.entries) {
       for (var everyProject in everyYear.value["projects"]) {
         temp.add(everyProject);
@@ -52,8 +56,12 @@ class GsocOrganization {
     final twitterUrl = data["twitter_url"] as String;
     final blogUrl = data["blog_url"] as String;
     final irc_channel = data["irc_channel"] as String;
-    final technologies = data["technologies"] as List<dynamic>;
-    final topics = data["topics"] as List<dynamic>;
+    final techList = data["technologies"] as List<dynamic>;
+    final topicsList = data["topics"] as List<dynamic>;
+    final technologies = convertListToStringWithoutBracket(
+        data["technologies"] as List<dynamic>);
+    final topics =
+        convertListToStringWithoutBracket(data["topics"] as List<dynamic>);
     final years = data["years"] as Map<String, dynamic>;
 
     return GsocOrganization(
@@ -70,16 +78,15 @@ class GsocOrganization {
         technologies: technologies,
         years: years,
         topics: topics,
-        irc_channel: irc_channel);
+        irc_channel: irc_channel,
+        techList:techList,
+        topicsList: topicsList
+        );
+  }
+
+  static String convertListToStringWithoutBracket(List<dynamic> anyList) {
+    String s = anyList.toString();
+    s = s.substring(1, s.length - 2);
+    return s;
   }
 }
-
-
-
-
-
-
-// "irc_channel": "string",
-
-
-

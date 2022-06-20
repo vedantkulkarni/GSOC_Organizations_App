@@ -1,5 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gsoc_organizations/Features/Home/presentation/cubit/home_cubit.dart';
 import 'Features/Home/presentation/pages/home.dart';
 
@@ -18,8 +21,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => HomeCubit(),
-      child: const MaterialApp(home: HomeScreen()),
+      create: (context) => HomeCubit(),
+      child: ScreenUtilInit(
+       designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder:(context,child)=>  MaterialApp(home: HomeScreen()),
+      ),
     );
   }
 }

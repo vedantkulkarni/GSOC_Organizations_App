@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gsoc_organizations/Features/Home/data/models/gsoc_organization.dart';
 import 'package:gsoc_organizations/Features/Home/presentation/pages/organization_detail.dart';
+import 'package:gsoc_organizations/Utilities/constants.dart';
 
 class OrganizationTile extends StatelessWidget {
   final GsocOrganization gsocOrganization;
@@ -30,12 +32,17 @@ class OrganizationTile extends StatelessWidget {
               tag: gsocOrganization.name,
               child: Image.network(
                 gsocOrganization.image_url,
-                width: 25,
-                height: 25,
-                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
+                fit: BoxFit.contain,
               ),
             ),
-            FittedBox(child: Text(gsocOrganization.name))
+            FittedBox(
+                child: Text(
+              gsocOrganization.name,
+              style:
+                  nunito.copyWith(fontWeight: FontWeight.bold, fontSize: 14.sp),
+            ))
           ],
         ),
       ),

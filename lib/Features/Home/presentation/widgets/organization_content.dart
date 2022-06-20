@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gsoc_organizations/Features/Home/presentation/widgets/project_tile.dart';
 import 'package:gsoc_organizations/Utilities/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../data/models/gsoc_organization.dart';
 
@@ -26,28 +28,39 @@ class _OrganizationContentState extends State<OrganizationContent> {
           children: AnimationConfiguration.toStaggeredList(
             duration: const Duration(milliseconds: 375),
             childAnimationBuilder: (widget) => SlideAnimation(
-              verticalOffset: 50.0,
+              verticalOffset: 50.0.h,
               child: FadeInAnimation(
                 child: widget,
               ),
             ),
             children: [
-              Text(
-                widget.gsocOrganization.name,
-                style: headingStyle,
-              ),
-              const SizedBox(
-                height: 4,
-              ),
-              Text(
-                widget.gsocOrganization.description,
-                style: nunito.copyWith(color: blackColor),
-              ),
-              const SizedBox(
-                height: 20,
+              Container(
+                padding: EdgeInsets.all(8.h),
+                width: double.maxFinite,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      widget.gsocOrganization.name,
+                      style: headingStyle.copyWith(fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    Text(
+                      widget.gsocOrganization.description,
+                      style: nunito.copyWith(color: blackColor),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                  ],
+                ),
               ),
               Container(
-                padding: const EdgeInsets.all(8),
+                padding: EdgeInsets.all(8.h),
                 width: double.maxFinite,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,47 +69,55 @@ class _OrganizationContentState extends State<OrganizationContent> {
                       "Technologies",
                       style: nunito.copyWith(color: greyColor),
                     ),
-                    const SizedBox(
-                      height: 4,
+                    SizedBox(
+                      height: 4.h,
                     ),
                     Text(
                       widget.gsocOrganization.technologies.toString(),
-                      style: nunito.copyWith(color: blackColor, fontSize: 16),
+                      style:
+                          nunito.copyWith(color: blackColor, fontSize: 16.sp),
                     ),
-                    const SizedBox(
-                      height: 16,
+                    SizedBox(
+                      height: 16.h,
                     ),
                     Text(
                       "Topics",
                       style: nunito.copyWith(color: greyColor),
                     ),
-                    const SizedBox(
-                      height: 4,
+                    SizedBox(
+                      height: 4.h,
                     ),
                     Text(
                       widget.gsocOrganization.topics.toString(),
-                      style: nunito.copyWith(color: blackColor, fontSize: 16),
+                      style:
+                          nunito.copyWith(color: blackColor, fontSize: 16.sp),
                     ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Text(
-                      "Link",
-                      style: nunito.copyWith(color: greyColor, fontSize: 14),
-                    ),
-                    const SizedBox(
-                      height: 4,
+                    SizedBox(
+                      height: 16.h,
                     ),
                     Text(
-                      widget.gsocOrganization.url,
-                      style: nunito.copyWith(color: blueColor, fontSize: 16),
+                      "Links",
+                      style: nunito.copyWith(color: greyColor, fontSize: 14.sp),
                     ),
-                    const SizedBox(
-                      height: 32,
+                    SizedBox(
+                      height: 4.h,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        _launchUrl(widget.gsocOrganization.url);
+                      },
+                      child: Text(
+                        widget.gsocOrganization.url,
+                        style:
+                            nunito.copyWith(color: blueColor, fontSize: 16.sp),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 32.h,
                     ),
                     Text(
                       "Projects",
-                      style: nunito.copyWith(color: greyColor, fontSize: 16),
+                      style: nunito.copyWith(color: greyColor, fontSize: 16.sp),
                     ),
                   ],
                 ),
@@ -122,5 +143,10 @@ class _OrganizationContentState extends State<OrganizationContent> {
         ),
       ),
     );
+  }
+
+  void _launchUrl(String url) async {
+    final Uri _url = Uri.parse(url);
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }

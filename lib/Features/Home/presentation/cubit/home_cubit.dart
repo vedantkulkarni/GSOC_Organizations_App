@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:gsoc_organizations/Features/Home/data/models/gsoc_organization.dart';
+
+import '../../data/models/gsoc_organization.dart';
 
 part 'home_state.dart';
 
@@ -12,7 +13,8 @@ class HomeCubit extends Cubit<HomeState> {
     getAllOrganizations();
   }
 
-  List<GsocOrganization> _organizations = [];
+  List<GsocOrganization> _allOrganizations = [];
+  List<GsocOrganization> _searchedOrganizations = [];
 
   Future<void> getAllOrganizations() async {
     var response =
@@ -22,8 +24,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(AllOrganizationsState());
   }
 
-  Future<void> parseJsonResponseToObject(
-      List<dynamic> data) async {
+  Future<void> parseJsonResponseToObject(List<dynamic> data) async {
     List<GsocOrganization> _tempList = [];
     for (var everyOrganization in data) {
       final GsocOrganization organization =
@@ -31,11 +32,40 @@ class HomeCubit extends Cubit<HomeState> {
       _tempList.add(organization);
     }
 
-    _organizations = _tempList;
+    _allOrganizations = _tempList;
+  }
+
+  void closeSearch() {
+    emit(AllOrganizationsState());
+  }
+
+  void userSearched(String value) {
+    _searchedOrganizations = [];
+    _searchedOrganizations.addAll(_allOrganizations.where((element) {
+      return element.name.toLowerCase().startsWith(value.toLowerCase());
+    }).toList());
+
+    if(_searchedOrganizations.isEmpty)
+    {
+      _searchedOrganizations.addAll(_allOrganizations.where((element) {
+      return element.techList.any(
+        (element) => element.toString().startsWith(value),
+        
+      )||
+      element.topicsList
+          .any((element) => element.toString().startsWith(value));
+    }));
+    }
+
+    
+
+    emit(SearchTriggered(value));
   }
 
   //getter
   List<GsocOrganization> get organizationsList {
-    return [..._organizations];
+    return state is SearchTriggered
+        ? [..._searchedOrganizations]
+        : [..._allOrganizations];
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gsoc_organizations/Features/Home/presentation/cubit/home_cubit.dart';
 import 'package:gsoc_organizations/Features/Home/presentation/widgets/organization_tile.dart';
+import 'package:gsoc_organizations/Utilities/constants.dart';
 
 class OrganizationGridView extends StatefulWidget {
   const OrganizationGridView({Key? key}) : super(key: key);
@@ -18,10 +19,10 @@ class _OrganizationGridViewState extends State<OrganizationGridView> {
       builder: (someBuilderContext, state) {
         if (state is HomeInitial) {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(color: yellowColor,),
           );
         }
-
+        
         final _organizationsList =
             BlocProvider.of<HomeCubit>(context).organizationsList;
         return Container(
@@ -38,7 +39,9 @@ class _OrganizationGridViewState extends State<OrganizationGridView> {
                       duration: const Duration(milliseconds: 900),
                       curve: Curves.fastLinearToSlowEaseIn,
                       child: FadeInAnimation(
-                          child: OrganizationTile(gsocOrganization: _organizationsList[index]),),
+                        child: OrganizationTile(
+                            gsocOrganization: _organizationsList[index]),
+                      ),
                     ));
               }),
             ),
