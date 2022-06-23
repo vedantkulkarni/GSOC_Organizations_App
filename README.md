@@ -36,16 +36,16 @@
   <h3 align="center">GSOC Organizations App</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Get to know about year wise organizations, projects and more!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Get it on Playstore »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/vedantkulkarni/GSOC_Organizations_App/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/vedantkulkarni/GSOC_Organizations_App/issues">Request Feature</a>
   </p>
 </div>
 
@@ -84,16 +84,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This is an example app which demonstrates the use of **BLoC State Management** and **Clean Architecture** in **Flutter**. This app uses a **GSOC API** which can be found [here]("https://api.gsocorganizations.dev/").
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -101,16 +93,13 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+<a href="https://flutter.dev/" target="_blank"><img src="https://img.icons8.com/color/48/000000/flutter.png" width="45" height="45"/> </a> 
+<a href="https://git-scm.com/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/git.png"/> </a> 
+<a href="https://code.visualstudio.com/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/> </a> 
+<a href="https://www.dartpad.dev/?null_safety=true" target="_blank"><img src="https://img.icons8.com/color/48/000000/dart.png" width="45" height="45"/> </a>
+<a href="https://github.com/" target="_blank"><img src="https://img.icons8.com/nolan/128/github.png" width="45" height="45"/> </a>
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -119,34 +108,57 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get started you will first need to understand **Clean Architecture**.
+<br>
+For maintainable apps, every feature of the app, for example the home feature in the above code, must implement and follow clean architecture pattern.
+In this, every feature folder is divided into three major types of folders which are ***Data***, ***Domain*** and ***Presentation***.
 
-### Prerequisites
+**Presentation :** This is the folder where all the magic **UI**,**UX** and **State Management** is going to happen.
+This is further divided into cubit, pages and widgets.    
+*Cubit* contains the BLoC logic of the app where all the calls to the domain/repository layer are made and the where the State of the app is managed.     
+*Pages* contains the screen dart files which are displayed as pages.        
+*Widgets* are like small indivisual components of each page, contained in the Widgets folder.    
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+**Domain :** This layer acts as an intermediatory which is independant of data sources or UI changes.
+This is further divided into usecases, entities and repositories.    
+*UseCases* contains the usecases of the app or the user which are simply dart classes arranged as dart files.     
+*Entities* are just like models but they do not contain the data conversion methods, for example they cannot have toJson and fromJson methods..        
+*Repositories* in domain layer are the abstract class definitions of repositories and the data layer.
+
+**Data :** This layer is the root or source of all the data used by the app.    
+*datasources* contains the various data source files which are required by the app for example local and online DB.     
+*Models* contains model files which are used to convert json or xml data into dart objects.        
+*Repositories* contains the abstraction implementations of the repositories in domain layer.<br/><br/>
+
+## Prerequisites
+
+Basic knowledge of Flutter, working with Api Requests and Object Oriented Programming.
+<br/><br/>
+
+## Installation
+
+
+1. Fork the repo to your GitHub account.
+2. Clone the repo
   ```sh
-  npm install npm@latest -g
+  git clone https://github.com/vedantkulkarni/GSOC_Organizations_App.git
+  ```
+3. Install Flutter packages
+  ```sh
+  flutter pub get
+  ```
+4. Run the app from lib folder.
+  ```sh
+  flutter run
+  ```   
+  OR    
+
+5. Build apk for the project.
+  ```sh
+  flutter build apk --split-per-abi --no-sound-null-safety
   ```
 
-### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -155,9 +167,10 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Feel free to use this project to learn about BLoC State Management, Clean Architecuture and working with APIs.
+You can use this project as a live working example to learn above mentioned advanced practices.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://bloclibrary.dev/#/gettingstarted)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -186,12 +199,12 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+**Don't forget to give the project a star!** Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/AmazingGSOCFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingGSOCFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingGSOCFeature`)
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -210,27 +223,23 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@vedantkulkarni](https://www.linkedin.com/in/vedant-kulkarni-951770207/) - vedantk60@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/vedantkulkarni/GSOC_Organizations_App](https://github.com/vedantkulkarni/GSOC_Organizations_App)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Some resources to get you going
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Here's a list of some of the resources that made this project possible.
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [GSOC API](https://api.gsocorganizations.dev/)
+* [Reso Coder : BLoC and Cubit tutorial](https://resocoder.com/2020/08/04/flutter-bloc-cubit-tutorial/)
+* [Reso Coder : Flutter clean architecture](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
