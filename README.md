@@ -18,10 +18,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![GitHub forks](https://img.shields.io/github/forks/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/network)
+[![GitHub stars](https://img.shields.io/github/stars/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/issues)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -38,10 +37,10 @@
   <p align="center">
     Get to know about year wise organizations, projects and more!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Get it on Playstore »</strong></a>
+    <a href=""><strong>Get it on Playstore »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="">View Demo</a>
     ·
     <a href="https://github.com/vedantkulkarni/GSOC_Organizations_App/issues">Report Bug</a>
     ·
@@ -69,9 +68,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -82,12 +79,26 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is an example app which demonstrates the use of **BLoC State Management** and **Clean Architecture** in **Flutter**. This app uses a **GSOC API** which can be found [here]("https://api.gsocorganizations.dev/").
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+## Screenshots🚀
+
+
+|||
+|---|---|
+|<img src="./mockups/Google Pixel 4 XL Screenshot 0.png" height="750"/>|<img src="./mockups/Google Pixel 4 XL Screenshot 1.png" height="750"/>|
+
+|||
+|---|---|
+|<img src="./mockups/Google Pixel 4 XL Screenshot 2.png" height="750"/>|<img src="./mockups/Google Pixel 4 XL Screenshot 3.png" height="750"/>|
+
+
+<br/>
 
 
 
@@ -128,7 +139,15 @@ This is further divided into usecases, entities and repositories.
 **Data :** This layer is the root or source of all the data used by the app.    
 *datasources* contains the various data source files which are required by the app for example local and online DB.     
 *Models* contains model files which are used to convert json or xml data into dart objects.        
-*Repositories* contains the abstraction implementations of the repositories in domain layer.<br/><br/>
+*Repositories* contains the abstraction implementations of the repositories in domain layer.<br/><br/>      
+
+Image by Reso Coder from [here](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/)
+
+<img src="./mockups/arch.png" height="750"/>          
+
+
+
+<br/><br/>
 
 ## Prerequisites
 
@@ -176,23 +195,6 @@ _For more examples, please refer to the [Documentation](https://bloclibrary.dev/
 
 
 
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -211,19 +213,14 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 
 
-<!-- LICENSE -->
-## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@vedantkulkarni](https://www.linkedin.com/in/vedant-kulkarni-951770207/) - vedantk60@gmail.com
+Vedant Kulkarni - [@vedantkulkarni](https://www.linkedin.com/in/vedant-kulkarni-951770207/) - vedantk60@gmail.com
 
 Project Link: [https://github.com/vedantkulkarni/GSOC_Organizations_App](https://github.com/vedantkulkarni/GSOC_Organizations_App)
 
@@ -245,18 +242,9 @@ Here's a list of some of the resources that made this project possible.
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/vedant-kulkarni-951770207/
+
