@@ -23,20 +23,11 @@ class HomeCubit extends Cubit<HomeState> {
     final GSOCRepositoryDomainLayer _gsocRepositoryDomainLayer =
         GSOCRepositoryDataLayer();//init repository object.
     final GetAllOrganizationsUseCase _getAllOrganizationsUseCase = GetAllOrganizationsUseCase(_gsocRepositoryDomainLayer);//init usecase object.
-    _getAllOrganizationsUseCase.getAllOrganizations();//perform specfic function on use case.
+    _allOrganizations = await _getAllOrganizationsUseCase.getAllOrganizations();//perform specfic function on use case.
     emit(AllOrganizationsState());
   }
 
-  Future<void> parseJsonResponseToObject(List<dynamic> data) async {
-    List<GsocOrganization> _tempList = [];
-    for (var everyOrganization in data) {
-      final GsocOrganization organization =
-          GsocOrganization.fromJson(everyOrganization);
-      _tempList.add(organization);
-    }
-
-    _allOrganizations = _tempList;
-  }
+ 
 
   void closeSearch() {
     emit(AllOrganizationsState());
