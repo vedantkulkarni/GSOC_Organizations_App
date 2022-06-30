@@ -38,7 +38,7 @@
     Get to know about year wise organizations, projects and more!
     <br />
     <a href=""><strong>Get it on Playstore | </strong></a>
-    <a href="build\app\outputs\flutter-apk\app-x86_64-release.apk" download rel="noopener noreferrer" target="_blank">
+    <a href="https://drive.google.com/uc?export=download&id=19rHu6c-z7klSw3NhMeubBUKXDyFGCQso" download rel="noopener noreferrer" target="_blank" >
    Download Apk
 </a>
     <br />
