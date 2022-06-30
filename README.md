@@ -151,7 +151,7 @@ This is further divided into usecases, entities and repositories.
 
 Image by Reso Coder from [here](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/)
 
-<img src="./mockups/arch.png" height="550"/>          
+<img src="./mockups/arch.png" height="650"/>          
 
 
 
