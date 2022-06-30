@@ -17,7 +17,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
+
 [![GitHub forks](https://img.shields.io/github/forks/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/network)
 [![GitHub stars](https://img.shields.io/github/stars/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/issues)
@@ -73,7 +73,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#some-resources-to-get-you-going">Resources to checkout</a></li>
   </ol>
 </details>
 
@@ -218,9 +218,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 
 
 
