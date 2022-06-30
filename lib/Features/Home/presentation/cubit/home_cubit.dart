@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:gsoc_organizations/Features/Home/data/repositories/gsoc_repository_data_layer.dart';
+import 'package:gsoc_organizations/Features/Home/domain/repositories/gsoc_repository_domain_layer.dart';
+import 'package:gsoc_organizations/Features/Home/domain/usecases/get_all_organizations_usecase.dart';
 
 import '../../data/models/gsoc_organization.dart';
 
@@ -17,10 +20,10 @@ class HomeCubit extends Cubit<HomeState> {
   List<GsocOrganization> _searchedOrganizations = [];
 
   Future<void> getAllOrganizations() async {
-    var response =
-        await Dio().get("https://api.gsocorganizations.dev/organizations.json");
-    print(response.data[0].runtimeType);
-    await parseJsonResponseToObject(response.data);
+    final GSOCRepositoryDomainLayer _gsocRepositoryDomainLayer =
+        GSOCRepositoryDataLayer();//init repository object.
+    final GetAllOrganizationsUseCase _getAllOrganizationsUseCase = GetAllOrganizationsUseCase(_gsocRepositoryDomainLayer);//init usecase object.
+    _getAllOrganizationsUseCase.getAllOrganizations();//perform specfic function on use case.
     emit(AllOrganizationsState());
   }
 
@@ -45,19 +48,15 @@ class HomeCubit extends Cubit<HomeState> {
       return element.name.toLowerCase().startsWith(value.toLowerCase());
     }).toList());
 
-    if(_searchedOrganizations.isEmpty)
-    {
+    if (_searchedOrganizations.isEmpty) {
       _searchedOrganizations.addAll(_allOrganizations.where((element) {
-      return element.techList.any(
-        (element) => element.toString().startsWith(value),
-        
-      )||
-      element.topicsList
-          .any((element) => element.toString().startsWith(value));
-    }));
+        return element.techList.any(
+              (element) => element.toString().startsWith(value),
+            ) ||
+            element.topicsList
+                .any((element) => element.toString().startsWith(value));
+      }));
     }
-
-    
 
     emit(SearchTriggered(value));
   }

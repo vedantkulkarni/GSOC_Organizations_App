@@ -1,22 +1,5 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 [![GitHub forks](https://img.shields.io/github/forks/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/network)
 [![GitHub stars](https://img.shields.io/github/stars/vedantkulkarni/GSOC_Organizations_App?style=flat-square)](https://github.com/vedantkulkarni/GSOC_Organizations_App/stargazers)
@@ -83,7 +66,7 @@
 ## About The Project
 
 
-This is an example app which demonstrates the use of **BLoC State Management** and **Clean Architecture** in **Flutter**. This app uses a **GSOC API** which can be found [here]("https://api.gsocorganizations.dev/").
+This is an example app which demonstrates the use of **BLoC State Management** and **Clean Architecture** in **Flutter**. This app uses a **GSOC API** which can be found [here]("https://api.gsocorganizations.dev/").You can fork the repo and learn about BLoC and Clean Architecture on your own.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -248,8 +231,7 @@ Here's a list of some of the resources that made this project possible.
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/vedant-kulkarni-951770207/
 
