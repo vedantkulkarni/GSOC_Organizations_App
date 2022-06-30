@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gsoc_organizations">
+    package="com.vedantkulkarni.gsoc_organizations">
     <uses-permission android:name="android.permission.INTERNET"/>  
    <application
-        android:label="gsoc_organizations"
+        android:label="GSOC Organizations"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

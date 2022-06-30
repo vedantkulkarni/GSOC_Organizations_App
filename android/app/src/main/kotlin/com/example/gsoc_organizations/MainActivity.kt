@@ -1,4 +1,4 @@
-package com.example.gsoc_organizations
+package com.vedantkulkarni.gsoc_organizations
 
 import io.flutter.embedding.android.FlutterActivity
 

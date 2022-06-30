@@ -37,7 +37,10 @@
   <p align="center">
     Get to know about year wise organizations, projects and more!
     <br />
-    <a href=""><strong>Get it on Playstore »</strong></a>
+    <a href=""><strong>Get it on Playstore | </strong></a>
+    <a href="build\app\outputs\flutter-apk\app-x86_64-release.apk" download rel="noopener noreferrer" target="_blank">
+   Download Apk
+</a>
     <br />
     <br />
     <a href="">View Demo</a>
@@ -139,7 +142,12 @@ This is further divided into usecases, entities and repositories.
 **Data :** This layer is the root or source of all the data used by the app.    
 *datasources* contains the various data source files which are required by the app for example local and online DB.     
 *Models* contains model files which are used to convert json or xml data into dart objects.        
-*Repositories* contains the abstraction implementations of the repositories in domain layer.<br/><br/>      
+*Repositories* contains the abstraction implementations of the repositories in domain layer.<br/><br/>     
+
+
+<img src="./mockups/folder_struct.png" height="350"/>  
+<br/>
+<br/>
 
 Image by Reso Coder from [here](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/)
 
