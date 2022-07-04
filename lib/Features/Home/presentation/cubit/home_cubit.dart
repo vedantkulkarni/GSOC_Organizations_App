@@ -17,7 +17,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   List<GsocOrganization> _allOrganizations = [];
-  List<GsocOrganization> _searchedOrganizations = [];
+  List<GsocOrganization> _searchedOrganizations = [];//filtered list of searched organizations.
 
   Future<void> getAllOrganizations() async {
     final GSOCRepositoryDomainLayer _gsocRepositoryDomainLayer =
@@ -27,12 +27,17 @@ class HomeCubit extends Cubit<HomeState> {
     emit(AllOrganizationsState());
   }
 
+  Future<void> getOrganizationsByYear() async{} //To be implemented as a challenge, by you.
  
 
   void closeSearch() {
-    emit(AllOrganizationsState());
+    emit(AllOrganizationsState());//Display all the organizations on home screen again when user closes search.
   }
 
+
+
+
+  //search funciton.
   void userSearched(String value) {
     _searchedOrganizations = [];
     _searchedOrganizations.addAll(_allOrganizations.where((element) {

@@ -11,6 +11,6 @@ class HomeInitial extends HomeState {}
 class AllOrganizationsState extends HomeState {}
 
 class SearchTriggered extends HomeState {
-  final String search;
-  SearchTriggered(this.search);
+  final String searchValue;
+  SearchTriggered(this.searchValue);
 }
