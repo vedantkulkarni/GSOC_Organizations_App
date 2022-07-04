@@ -105,8 +105,7 @@ This is an example app which demonstrates the use of **BLoC State Management** a
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get started you will first need to understand **Clean Architecture**.
-<br>
+
 For maintainable apps, every feature of the app, for example the home feature in the above code, must implement and follow clean architecture pattern.
 In this, every feature folder is divided into three major types of folders which are ***Data***, ***Domain*** and ***Presentation***.
 
