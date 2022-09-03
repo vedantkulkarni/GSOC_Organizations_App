@@ -1,8 +1,4 @@
-import 'dart:convert';
-
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
-import 'package:equatable/equatable.dart';
 import 'package:gsoc_organizations/Features/Home/data/repositories/gsoc_repository_data_layer.dart';
 import 'package:gsoc_organizations/Features/Home/domain/repositories/gsoc_repository_domain_layer.dart';
 import 'package:gsoc_organizations/Features/Home/domain/usecases/get_all_organizations_usecase.dart';
@@ -17,25 +13,28 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   List<GsocOrganization> _allOrganizations = [];
-  List<GsocOrganization> _searchedOrganizations = [];//filtered list of searched organizations.
+  List<GsocOrganization> _searchedOrganizations =
+      []; //filtered list of searched organizations.
 
   Future<void> getAllOrganizations() async {
+    // emit(HomeInitial());
     final GSOCRepositoryDomainLayer _gsocRepositoryDomainLayer =
-        GSOCRepositoryDataLayer();//init repository object.
-    final GetAllOrganizationsUseCase _getAllOrganizationsUseCase = GetAllOrganizationsUseCase(_gsocRepositoryDomainLayer);//init usecase object.
-    _allOrganizations = await _getAllOrganizationsUseCase.getAllOrganizations();//perform specfic function on use case.
+        GSOCRepositoryDataLayer(); //init repository object.
+    final GetAllOrganizationsUseCase _getAllOrganizationsUseCase =
+        GetAllOrganizationsUseCase(
+            _gsocRepositoryDomainLayer); //init usecase object.
+    _allOrganizations = await _getAllOrganizationsUseCase
+        .getAllOrganizations(); //perform specfic function on use case.
     emit(AllOrganizationsState());
   }
 
-  Future<void> getOrganizationsByYear() async{} //To be implemented as a challenge, by you.
- 
+  Future<void>
+      getOrganizationsByYear() async {} //To be implemented as a challenge, by you.
 
   void closeSearch() {
-    emit(AllOrganizationsState());//Display all the organizations on home screen again when user closes search.
+    emit(
+        AllOrganizationsState()); //Display all the organizations on home screen again when user closes search.
   }
-
-
-
 
   //search funciton.
   void userSearched(String value) {

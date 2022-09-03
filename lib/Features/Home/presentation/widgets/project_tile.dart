@@ -7,14 +7,12 @@ class ProjectTile extends StatelessWidget {
   final Map<String, dynamic> project;
   const ProjectTile(this.project, {Key? key}) : super(key: key);
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
       // height: 100,
-      padding:  EdgeInsets.all(10.h),
-      margin:  EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      padding: EdgeInsets.all(10.h),
+      margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(10.sp)),
       child: Column(
@@ -39,19 +37,20 @@ class ProjectTile extends StatelessWidget {
               const Spacer(),
               Row(
                 children: [
-                  IconButton(
+                  TextButton(
                       onPressed: () {
                         _launchUrl(project["code_url"]);
                       },
-                      icon: const Icon(Icons.code_rounded)),
-                   SizedBox(
+                      child:  Text("View Code",
+                      style: nunito.copyWith( fontSize: 12.sp),),),
+                  SizedBox(
                     width: 10.w,
                   ),
                   IconButton(
                       onPressed: () {
                         _launchUrl(project["project_url"]);
                       },
-                      icon:  Icon(
+                      icon: Icon(
                         Icons.ios_share_rounded,
                         size: 20.sp,
                       ))
@@ -59,7 +58,7 @@ class ProjectTile extends StatelessWidget {
               )
             ],
           ),
-           SizedBox(
+          SizedBox(
             height: 8.h,
           ),
           Text(
@@ -67,13 +66,15 @@ class ProjectTile extends StatelessWidget {
             style: nunito.copyWith(
                 color: blackColor, fontSize: 16, fontWeight: FontWeight.bold),
           ),
-           SizedBox(
+          SizedBox(
             height: 8.h,
           ),
           Text(
             project["short_description"],
             style: nunito.copyWith(
-                color: blackColor, fontSize: 14.sp, fontWeight: FontWeight.normal),
+                color: blackColor,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.normal),
           ),
         ],
       ),

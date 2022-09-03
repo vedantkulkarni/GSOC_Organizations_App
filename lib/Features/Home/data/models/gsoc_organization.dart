@@ -86,7 +86,7 @@ class GsocOrganization {
 
   static String convertListToStringWithoutBracket(List<dynamic> anyList) {
     String s = anyList.toString();
-    s = s.substring(1, s.length - 2);
+    s = s.substring(1, s.length - 1);
     return s;
   }
 }
